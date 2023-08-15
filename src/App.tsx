@@ -1,5 +1,7 @@
+import PinCode from "./components/pin_code";
+
 function App() {
-  return <div>a</div>;
+  return <PinCode />;
 }
 
 export default App;
