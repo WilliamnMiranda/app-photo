@@ -1,7 +1,15 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import PinCode from "./components/pin_code";
 
 function App() {
-  return <PinCode />;
+  const queryClient = new QueryClient();
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <PinCode />
+      </QueryClientProvider>
+    </>
+  );
 }
 
 export default App;
