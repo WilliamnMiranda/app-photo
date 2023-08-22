@@ -5,7 +5,7 @@ const PinCode = () => {
   const PIN_COUNT = 10;
   const [inputValues, setInputValues] = useState(Array(PIN_COUNT).fill(""));
   const inputRefs = useRef(Array(PIN_COUNT).fill(null));
-  const { createStorage } = useCodePin();
+  const { enterToStorage } = useCodePin();
   useEffect(() => {
     inputRefs.current[0]?.focus();
   }, []);
@@ -29,8 +29,7 @@ const PinCode = () => {
 
   const submit = () => {
     const pinString = inputValues.join(""); // Transforma o array em uma string
-    console.log(pinString); // Exibe a string no console (você pode fazer o que quiser com ela)
-    createStorage();
+    enterToStorage(pinString);
   };
 
   return (

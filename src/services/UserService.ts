@@ -1,0 +1,16 @@
+import api from "../infra/api";
+import { IUserDataLogin } from "../interfaces/UserInterface";
+const userServices = {
+  login: async (data: IUserDataLogin) => {
+    return await (
+      await api.post("/user/login", data)
+    ).data;
+  },
+  auth: async () => {
+    return await (
+      await api.post("/user/auth")
+    ).data;
+  },
+};
+
+export default userServices;
