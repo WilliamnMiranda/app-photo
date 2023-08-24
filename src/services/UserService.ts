@@ -8,7 +8,7 @@ const userServices = {
   },
   auth: async () => {
     return await (
-      await api.post("/user/auth")
+      await api.post("/access/auth")
     ).data;
   },
 };

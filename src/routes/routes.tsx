@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeScreen from "../pages/Home";
 import StorageScreen from "../pages/Storage";
+import PrivateRoute from "../components/private_route";
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/storage/:id",
-    element: <StorageScreen />,
+    element: <PrivateRoute element={StorageScreen} />,
+  },
+  {
+    path: "/login",
+    element: <HomeScreen />,
   },
 ]);
 
