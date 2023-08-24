@@ -3,7 +3,7 @@ import { IUserDataLogin } from "../interfaces/UserInterface";
 const userServices = {
   login: async (data: IUserDataLogin) => {
     return await (
-      await api.post("/user/login", data)
+      await api.post("/access/login", data)
     ).data;
   },
   auth: async () => {
