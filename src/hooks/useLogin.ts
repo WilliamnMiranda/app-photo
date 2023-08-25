@@ -7,8 +7,8 @@ import { login } from "../store/slices/UserSlice";
 import { useMutation, useQuery } from "react-query";
 import { IUserDataLogin } from "../interfaces/UserInterface";
 export const useLogin = () => {
-  const [email, setEmail] = useState("williamnmiranda@gmail.com");
-  const [password, setPassword] = useState("123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,5 +47,7 @@ export const useLogin = () => {
     data,
     isLoading,
     isSuccess,
+    email,
+    password,
   };
 };
