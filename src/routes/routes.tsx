@@ -8,7 +8,7 @@ import LoginScreen from "../pages/Login";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeScreen />,
+    element: <PrivateRoute element={HomeScreen} />,
   },
   {
     path: "/pin",
