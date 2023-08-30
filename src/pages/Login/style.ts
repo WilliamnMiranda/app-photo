@@ -26,3 +26,8 @@ export const Tittle = styled.h1`
   font-size: 1.6em;
   margin-bottom: 10px;
 `;
+
+export const ButtonLogin = styled.button`
+  height: 40px;
+  width: 100%;
+`;

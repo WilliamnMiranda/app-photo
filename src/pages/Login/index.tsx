@@ -1,4 +1,3 @@
-import React from "react";
 import { useLogin } from "../../hooks/useLogin";
 import InputText from "../../components/forms/input_text";
 import * as C from "./style";
@@ -18,7 +17,7 @@ const LoginScreen = () => {
             <Label value="Informe sua senha" />
             <InputText onChange={setPassword} value={password} />
           </div>
-          <button> login </button>
+          <C.ButtonLogin> login </C.ButtonLogin>
         </form>
       </C.ContainerForm>
     </C.ContainerLogin>

@@ -25,13 +25,15 @@ export const useLogin = () => {
         dispatch(login(data));
         navigate("/");
       },
+      onError: () => {
+        alert("error");
+      },
     }
   );
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const data = { email, password };
-    console.log(data);
     mutation.mutate(data);
   };
 
@@ -39,7 +41,7 @@ export const useLogin = () => {
     if (data) {
       navigate("/");
     }
-  }, [data, isLoading, navigate]);
+  }, [data, navigate]);
   return {
     setEmail,
     setPassword,
