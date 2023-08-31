@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pin",
-    element: <PinScreen />,
+    element:  <PrivateRoute element={PinScreen} />,
   },
   {
     path: "/storage/:id",
