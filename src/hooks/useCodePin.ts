@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import StorageService from "../services/StorageService";
 import { useNavigate } from "react-router-dom";
 
 const useCodePin = () => {
-  const [code, setCode] = useState("");
+  const PIN_COUNT = 10;
+  const [inputValues, setInputValues] = useState(Array(PIN_COUNT).fill(""));
   const navigate = useNavigate();
   const createStorage = useMutation(() => StorageService.createStorage(), {
     onSuccess: () => {},
@@ -17,16 +18,44 @@ const useCodePin = () => {
         navigate(`/storage/${data.code}`);
       },
       onError: () => {
-        console.log("erro");
+        
+        if(inputValues.includes('')){
+          alert('preencha todos os campos')
+        }else{
+          alert('Codigo nao encontrado')
+        }
       },
     }
   );
+  const inputRefs = useRef(Array(PIN_COUNT).fill(null));
+  useEffect(() => {
+    inputRefs.current[0]?.focus();
+  }, []);
 
+  const handleInput = (
+    index: number,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.value;
+    const newInputValues = [...inputValues];
+    newInputValues[index] = value;
+
+    setInputValues(newInputValues);
+
+    if (value && index < PIN_COUNT - 1) {
+      inputRefs.current[index + 1]?.focus();
+    } else if (!value && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
   return {
-    code,
-    setCode,
     createStorage: createStorage.mutate,
     enterToStorage: enterToStorage.mutate,
+    inputValues,
+    setInputValues,
+    PIN_COUNT,
+    handleInput,
+    inputRefs
   };
 };
 
