@@ -1,8 +1,12 @@
-import React from "react";
+import * as C from "./style";
 import PinCode from "../../components/pin_code";
 
 const PinScreen = () => {
-  return <PinCode />;
+  return (
+  <C.ContainerPin>
+    <PinCode />
+  </C.ContainerPin>
+  );
 };
 
 export default PinScreen;

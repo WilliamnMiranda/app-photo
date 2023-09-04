@@ -15,8 +15,21 @@ export const ContainerOptions = styled.div`
 `
 
 export const Option = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-color: grey;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background-color: white;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size:1.2em;
+  div {
+    font-size: 2.0em;
+  }
 `

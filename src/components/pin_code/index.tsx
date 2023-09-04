@@ -49,7 +49,7 @@ const PinCode = () => {
           ref={(input) => (inputRefs.current[index] = input)}
         />
       ))}
-      <button onClick={submit}>Submit</button>
+      <C.ButtonPin onClick={submit}>ENTRAR</C.ButtonPin>
     </C.ContainerPin>
   );
 };
