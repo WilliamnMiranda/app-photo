@@ -39,6 +39,7 @@ const PinCode = () => {
           key={index}
           type="text"
           maxLength={1}
+          check={!!inputValues[index]}
           value={inputValues[index]}
           onChange={(e) => handleInput(index, e)}
           onKeyDown={(e) => {
