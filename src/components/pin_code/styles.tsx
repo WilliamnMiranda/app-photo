@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface IPin {
-  check: boolean
+  containValue: boolean
 }
 export const ContainerPin = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const Pin = styled.input<IPin>`
   background-color: #F0F0F0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   text-align: center;
-  border:${({check})=> check ? '1px solid black' : 'none'}
+  border:${({containValue})=> containValue ? '1px solid black' : 'none'};
 `;
 export const ButtonPin = styled.button`
   box-sizing: border-box;

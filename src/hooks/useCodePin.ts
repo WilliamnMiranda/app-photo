@@ -22,6 +22,7 @@ const useCodePin = () => {
           alert("preencha todos os campos");
         } else {
           alert("Codigo nao encontrado");
+          setInputValues(Array(PIN_COUNT).fill(""));
         }
       },
     }
