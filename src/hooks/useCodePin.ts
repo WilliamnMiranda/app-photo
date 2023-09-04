@@ -18,11 +18,10 @@ const useCodePin = () => {
         navigate(`/storage/${data.code}`);
       },
       onError: () => {
-        
-        if(inputValues.includes('')){
-          alert('preencha todos os campos')
-        }else{
-          alert('Codigo nao encontrado')
+        if (inputValues.includes("")) {
+          alert("preencha todos os campos");
+        } else {
+          alert("Codigo nao encontrado");
         }
       },
     }
@@ -55,7 +54,7 @@ const useCodePin = () => {
     setInputValues,
     PIN_COUNT,
     handleInput,
-    inputRefs
+    inputRefs,
   };
 };
 

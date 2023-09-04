@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
 import * as C from "./styles";
 import useCodePin from "../../hooks/useCodePin";
 const PinCode = () => {
-  const { enterToStorage,inputValues,setInputValues,PIN_COUNT,handleInput,inputRefs} = useCodePin();
+  const {
+    enterToStorage,
+    inputValues,
+    PIN_COUNT,
+    handleInput,
+    inputRefs,
+  } = useCodePin();
   const submit = () => {
-    const pinString = inputValues.join(""); // Transforma o array em uma string
+    const pinString = inputValues.join("");
     enterToStorage(pinString);
   };
 
